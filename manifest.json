@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Trello Extension",
+  "version": "1.0",
+  "description": "A Chrome extension to automate Trello",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://trello.com/*"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://trello.com/*"],
+      "js": ["dist/content.js"]
+    }
+  ]
+}
